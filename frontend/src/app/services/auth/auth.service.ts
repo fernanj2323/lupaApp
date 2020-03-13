@@ -10,8 +10,8 @@ import { User } from '../../models/auth/user';
 export class AuthService {
 
  // AUTH_SERVER: string = 'http://132.148.166.222:3000/api'; //go daddy back 
-AUTH_SERVER: string = 'http://localhost:3000/api';
- //AUTH_SERVER: string = '/api';
+//AUTH_SERVER: string = 'http://localhost:3000/api';
+ AUTH_SERVER: string = 'http://132.148.166.222:3000/api';
   authSubject = new BehaviorSubject(false);
    token: string;
    email: string;

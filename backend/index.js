@@ -56,8 +56,16 @@ function main ()
 function middlewares(){
     // Middlewares
     // app.use(morgan('dev'));
-    app.use(cors({origin: 'http://localhost:4200'}));
-    app.use(express.json());//de esta forma podemos entender los archivos JSON que vengan de Frontend y manipularlos 
+    //app.use(cors({origin: 'http://132.148.166.222:4200'}));
+
+    app.use(function(req, res, next){
+        res.header('Access-Control-Allow-Origin', "*");
+        res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETED');
+        res.header('Access-Control-Allow-Headers', 'Content-Type');
+        next();
+    })
+
+    app.use(express.json()); //de esta forma podemos entender los archivos JSON que vengan de Frontend y manipularlos 
     app.use(bodyParserJSON);
     app.use(bodyParserURLEncoded);
     routes();
