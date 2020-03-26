@@ -1,11 +1,8 @@
-// export class properties   {
-//     API = 'http://132.148.166.222:3000/api'
-// }
+
+module.exports = {
 
 
-export class properties  {
-
-      //  'http://132.148.166.222:3000/api'   
-       'http://localhost:3000/api'   
+  API: 'http://localhost:3000/api'
+  //  API: 'http://132.148.166.222:3000/api'; //go daddy back 
 
 }

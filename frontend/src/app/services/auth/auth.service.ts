@@ -4,14 +4,16 @@ import { JwResponse } from '../../models/auth/jw-response';
 import { tap } from 'rxjs/operators';
 import { Observable, BehaviorSubject, from } from 'rxjs';
 import { User } from '../../models/auth/user';
-import {properties}    from '../properties';
-//console.log('flag Aut service - 0 ');
+
+const api = require('../properties').API;
+
 @Injectable()
 export class AuthService {
 
- // AUTH_SERVER: string = 'http://132.148.166.222:3000/api'; //go daddy back 
-//AUTH_SERVER = 'http://localhost:3000/api';
-AUTH_SERVER = properties ;
+
+AUTH_SERVER = api;
+
+
 //AUTH_SERVER: string = 'http://132.148.166.222:3000/api';
   authSubject = new BehaviorSubject(false);
    token: string;
@@ -21,7 +23,7 @@ AUTH_SERVER = properties ;
    department: string; 
    rol: string; 
    expiresIn: string;  
-   id: string; 
+   id: string;  
   
    selectedUser: User; 
    users: User[];
@@ -30,6 +32,7 @@ AUTH_SERVER = properties ;
     private httpClient: HttpClient) { 
   //  this.selectedUser = new User();
   }
+
 
   register(user: User): Observable<JwResponse> {
    // console.log('register')

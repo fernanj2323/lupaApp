@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Observable, BehaviorSubject } from 'rxjs';
+import { Observable, BehaviorSubject, from } from 'rxjs';
 // import { JwResponse } from '../../models/auth/jw-response';
 import {HttpClient, HttpHeaders } from '@angular/common/http';
 import { Emails } from '../../models/emails/emails'
 // import { Data } from '@angular/router';
+
+import { AuthService } from '../auth/auth.service'
 
 @Injectable({
   providedIn: 'root'
