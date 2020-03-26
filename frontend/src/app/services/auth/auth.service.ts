@@ -2,16 +2,17 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { JwResponse } from '../../models/auth/jw-response';
 import { tap } from 'rxjs/operators';
-import { Observable, BehaviorSubject } from 'rxjs';
+import { Observable, BehaviorSubject, from } from 'rxjs';
 import { User } from '../../models/auth/user';
-
+import {properties}    from '../properties';
 //console.log('flag Aut service - 0 ');
 @Injectable()
 export class AuthService {
 
  // AUTH_SERVER: string = 'http://132.148.166.222:3000/api'; //go daddy back 
-//AUTH_SERVER: string = 'http://localhost:3000/api';
- AUTH_SERVER: string = 'http://132.148.166.222:3000/api';
+//AUTH_SERVER = 'http://localhost:3000/api';
+AUTH_SERVER = properties ;
+//AUTH_SERVER: string = 'http://132.148.166.222:3000/api';
   authSubject = new BehaviorSubject(false);
    token: string;
    email: string;
