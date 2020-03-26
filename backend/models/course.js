@@ -17,7 +17,7 @@ const courseSchema = new Schema({
     valid_years: { type: Number },
     online: { type: Boolean },
     url_src: { type: String },
-    url_video: { type: String },
+    url_video: { type: String  },
     dateini: { type: String },
     dateclose: { type: String },
     category_id: { type: String },
